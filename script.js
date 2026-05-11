@@ -119,3 +119,14 @@ if (counterSection) {
   }, { threshold: 0.5 });
   counterObserver.observe(counterSection);
 }
+
+/* ── Portfolio Slider ── */
+let currentSlide = 0;
+window.moveSlider = function(direction) {
+  const track = document.getElementById('slider-1-track');
+  if (!track) return;
+  const slides = track.querySelectorAll('.slide');
+  const maxSlides = slides.length;
+  currentSlide = (currentSlide + direction + maxSlides) % maxSlides;
+  track.style.transform = `translateX(-${currentSlide * 100}%)`;
+};

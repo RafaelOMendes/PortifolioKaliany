@@ -460,10 +460,40 @@ section { padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 4vw, 4rem); }
   border-radius: var(--radius-sm);
   display: flex; align-items: center; gap: 1rem;
   transition: var(--transition);
+  position: relative;
 }
 .contact-card:hover {
   background: rgba(235, 227, 216, 0.1);
   transform: translateX(6px);
+}
+/* ── Copy Button ── */
+.copy-btn {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(235, 227, 216, 0.1);
+  color: var(--muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 2;
+}
+.copy-btn:hover {
+  background: var(--beige);
+  color: var(--bg);
+  transform: translateY(-50%) scale(1.05);
+}
+.copy-btn.copied {
+  background: #4caf50;
+  color: white;
+  border-color: #4caf50;
 }
 .contact-icon {
   width: 44px; height: 44px;
